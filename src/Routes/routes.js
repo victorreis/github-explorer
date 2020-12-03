@@ -5,7 +5,7 @@ const routes = [
     {
         key: 'About',
         name: 'About',
-        path: '/About',
+        path: '/about',
         showInMenu: true,
         exact: true,
         component: About,
