@@ -1,11 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { NavLink, Route, BrowserRouter, Switch } from 'react-router-dom';
+import { NavLink, BrowserRouter } from 'react-router-dom';
 
 import './App.css';
-import About from './Pages/About';
-import Home from './Pages/Home';
-import User from './Pages/User';
+import CustomSwitch from './Components/Navigation/CustomSwitch/CustomSwitch';
+import routes from './Routes/routes';
 
 const App = () => {
     return (
@@ -21,11 +20,7 @@ const App = () => {
                         </NavLink>
                     </nav>
 
-                    <Switch>
-                        <Route path="/about" exact component={About} />
-                        <Route path="/" exact component={Home} />
-                        <Route path="*" exact component={User} />
-                    </Switch>
+                    <CustomSwitch items={routes} />
                 </div>
             </BrowserRouter>
         </>
