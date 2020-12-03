@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link, Route, BrowserRouter, Switch } from 'react-router-dom';
+import { NavLink, Route, BrowserRouter, Switch } from 'react-router-dom';
 
 import './App.css';
 import About from './Pages/About';
@@ -13,12 +13,12 @@ const App = () => {
             <BrowserRouter>
                 <div>
                     <nav>
-                        <Link to="/">
+                        <NavLink to="/">
                             <Button>Home</Button>
-                        </Link>
-                        <Link to="/about">
+                        </NavLink>
+                        <NavLink to="/about">
                             <Button>About</Button>
-                        </Link>
+                        </NavLink>
                     </nav>
 
                     <Switch>

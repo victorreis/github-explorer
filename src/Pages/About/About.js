@@ -1,5 +1,5 @@
 import React from 'react';
 
-const About = (props) => <div>About</div>;
+const About = (props) => <>About</>;
 
 export default About;
