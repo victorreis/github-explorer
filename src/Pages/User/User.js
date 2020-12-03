@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import UserDetails from '../../Components/UserDetails/UserDetails';
-import { MALFORMED_USER_NAME } from '../../Constants/constants';
+import { MALFORMED_USER_NAME } from '../../Config/constants';
 
 const getFormattedAndValidPathname = (pathname) => {
     const splittedPathname = pathname.split('/');
