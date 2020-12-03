@@ -51,7 +51,26 @@
             "warn",
             {
                 "newlinesBetween": "always", // new line between groups
-                "groups": [],
+                "groups": [
+                    "/^react/",
+                    "module",
+                    "/^@src\/Pages/",
+                    "/^@src\/Routes/",
+                    "/^@src\/Services/",
+                    "/^@src\/Store/",
+                    "/^@src\/Utils/",
+                    "/^@src\/Assets/",
+                    "/^@src\/Theme/",
+                    "/^@src\/Components/",
+                    "/^@src\/Types/",
+                    "/^@src\/Constants/",
+                    "/^@src\/Exceptions/",
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
                 "alphabetize": {
                     "order": "asc",
                     "ignoreCase": true
@@ -66,7 +85,7 @@
         // Allow modules with named exports only.
         "import/prefer-default-export": 0,
         // Force {foo: "bar"} object literal syntax.
-        "object-curly-spacing": ["error", "never"],
+        "object-curly-spacing": "off",
         // Make prettier code formatting suggestions more verbose.
         "prettier/prettier": ["warn"],
         // Throw warning when <a href="#"> or <a href="javascript:void(0)"> are used. Use <button> instead.

@@ -26,16 +26,7 @@
     "editor.useTabStops": true,
     "editor.wordBasedSuggestions": true,
     "editor.wrappingIndent": "indent",
-    "eslint.workingDirectories": [
-        "./../src/Components",
-        "./../src/Contants",
-        "./../src/Pages",
-        "./../src/Routes",
-        "./../src/Services",
-        "./../src/Store",
-        "./../src/Theme",
-        "./../src/Utils"
-    ],
+    "eslint.workingDirectories": ["./../src/**/*"],
     "files.autoSave": "off",
     "files.encoding": "utf8",
     "files.eol": "\n",
