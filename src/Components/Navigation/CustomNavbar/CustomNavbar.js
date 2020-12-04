@@ -6,7 +6,7 @@ import { PROJECT_NAME } from '../../../Config/constants';
 import NavLinks from '../NavLinks';
 import UserSearchField from '../UserSearchField';
 
-const CustomNavbar = (props) => {
+const CustomNavbar = () => {
     return (
         <nav>
             <Navbar bg="light" expand="md">

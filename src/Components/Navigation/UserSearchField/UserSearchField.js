@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { validateGithubUsername } from '../../../Utils/validators';
 
-const UserSearchField = (props) => {
+const UserSearchField = () => {
     const history = useHistory();
     const [username, setUsername] = useState('');
     const [isValidUsername, setIsValidUsername] = useState(true);
@@ -20,7 +20,6 @@ const UserSearchField = (props) => {
     const classes = ['mr-sm-2', isValidUsername ? '' : 'is-invalid'];
 
     const handleSearch = () => {
-        // eslint-disable-next-line fp/no-mutating-methods
         history.push(username);
     };
 

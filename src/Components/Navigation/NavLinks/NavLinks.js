@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import routes from '../../../Routes/routes';
 
-const NavLinks = (props) => {
+const NavLinks = () => {
     const navLinks = routes.map(
         (route) =>
             route.showInMenu && (

@@ -6,5 +6,5 @@ const CustomRoute = (props) => {
     return <Route exact={exact} path={path} component={component} key={key} />;
 };
 
-const createCustomRoute = (item) => () => CustomRoute({ item });
+const createCustomRoute = (item) => CustomRoute({ item });
 export default createCustomRoute;

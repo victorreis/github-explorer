@@ -8,8 +8,8 @@ import createCustomRoute from '../CustomRoute';
 
 import './CustomSwitch.css';
 
-const CustomSwitch = (props) => {
-    const customRoutes = routes.map((route) => createCustomRoute(route)());
+const CustomSwitch = () => {
+    const customRoutes = routes.map((route) => createCustomRoute(route));
 
     return (
         <Container className="custom-switch-container">

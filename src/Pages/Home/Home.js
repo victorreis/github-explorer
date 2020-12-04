@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = (props) => (
+const Home = () => (
     <section>
         <header>
             <h3>Welcome to Github Explorer.</h3>
