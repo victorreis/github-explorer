@@ -23,12 +23,12 @@ const UserDetailsCard = (props) => {
             publicGists,
             followers,
             following,
-            createdAt,
-            updatedAt,
         },
         onClickShowUserRepos,
         onClickShowStarredRepos,
     } = props;
+    const createdAt = new Date(props.user.createdAt);
+    const updatedAt = new Date(props.user.updatedAt);
 
     if (!login) {
         return <>{NONEXISTENT_USER_NAME(username)}</>;
@@ -79,10 +79,10 @@ const UserDetailsCard = (props) => {
                     <strong>Following: </strong> {following}
                     <br />
                     <strong>Created At: </strong>
-                    <time dateTime={createdAt}>{createdAt}</time>
+                    <time dateTime={createdAt}>{createdAt.toUTCString()}</time>
                     <br />
                     <strong>Updated At: </strong>
-                    <time dateTime={updatedAt}>{updatedAt}</time>
+                    <time dateTime={updatedAt}>{updatedAt.toUTCString()}</time>
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
