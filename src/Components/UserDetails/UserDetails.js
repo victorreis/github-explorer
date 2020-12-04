@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import githubUserService from '../../Services/GithubUserService/GithubUserService';
+import githubUserService from '../../Services/GithubUserService';
+import UserDetailsCard from '../UserDetailsCard';
 
 const UserDetails = ({ name }) => {
     const [user, setUser] = useState({});
@@ -11,7 +12,11 @@ const UserDetails = ({ name }) => {
         })();
     }, [name]);
 
-    return <>UserDetails: {JSON.stringify(user)}</>;
+    return (
+        <>
+            <UserDetailsCard user={user} />
+        </>
+    );
 };
 
 export default UserDetails;
