@@ -2,9 +2,9 @@ import axios from 'axios';
 
 import { requestErrorHandler } from './ErrorHandlerService';
 
-const getByName = async (name) => {
+const getByUsername = async (username) => {
     const userDetails = await axios
-        .get(`https://api.github.com/users/${name}`)
+        .get(`https://api.github.com/users/${username}`)
         .then((res) => res.data)
         .catch(requestErrorHandler);
 
@@ -23,7 +23,8 @@ const standardizeUserFields = (user) => ({
 });
 
 const githubUserService = {
-    getByName,
+    getByUsername,
+    standardizeUserFields,
 };
 
 export default githubUserService;

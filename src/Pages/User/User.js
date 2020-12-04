@@ -10,7 +10,7 @@ const User = (props) => {
     const validUsername = userService.getValidUsernameFromPathname(pathname);
 
     const user = validUsername ? (
-        <UserDetails name={validUsername} />
+        <UserDetails username={validUsername} />
     ) : (
         <>{MALFORMED_USER_NAME(pathname)}</>
     );

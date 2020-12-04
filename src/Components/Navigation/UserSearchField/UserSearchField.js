@@ -36,7 +36,7 @@ const UserSearchField = (props) => {
             <Button
                 variant="outline-success"
                 onClick={handleSearch}
-                disabled={!isValidUsername}>
+                disabled={!username || !isValidUsername}>
                 Search
             </Button>
         </Form>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'react-bootstrap';
+import { Card, Image, Button } from 'react-bootstrap';
 
 import './UserDetailsCard.css';
 
@@ -23,6 +23,8 @@ const UserDetailsCard = ({
         createdAt,
         updatedAt,
     },
+    showUserRepos,
+    showStarredRepos,
 }) => {
     return (
         <Card>
@@ -72,10 +74,11 @@ const UserDetailsCard = ({
                     <br />
                     <strong>Updated At:</strong> {updatedAt}
                 </Card.Text>
-
-                <Card.Link href="#REPOS">REPOS</Card.Link>
-                <Card.Link href="#STARRED">STARRED</Card.Link>
             </Card.Body>
+            <Card.Footer className="text-muted">
+                <Button onClick={showUserRepos}>REPOS</Button>
+                <Button onClick={showStarredRepos}>STARRED</Button>
+            </Card.Footer>
         </Card>
     );
 };

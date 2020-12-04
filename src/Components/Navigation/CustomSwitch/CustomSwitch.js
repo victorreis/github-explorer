@@ -20,6 +20,8 @@ const CustomSwitch = (props) => {
                     <Route path="/" exact component={Home} />
                     {customRoutes}
                 </Switch>
+                <br />
+                <br />
             </main>
         </Container>
     );
