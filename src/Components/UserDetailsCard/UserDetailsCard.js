@@ -2,8 +2,10 @@ import React from 'react';
 import { Card, Image, Button } from 'react-bootstrap';
 
 import './UserDetailsCard.css';
+import { NONEXISTENT_USER_NAME } from '../../Config/constants';
 
 const UserDetailsCard = ({
+    username,
     user: {
         login,
         name,
@@ -26,6 +28,9 @@ const UserDetailsCard = ({
     showUserRepos,
     showStarredRepos,
 }) => {
+    if (!login) {
+        return <>{NONEXISTENT_USER_NAME(username)}</>;
+    }
     return (
         <Card>
             <Card.Body>

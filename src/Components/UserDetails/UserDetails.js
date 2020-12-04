@@ -55,6 +55,7 @@ const UserDetails = ({ username }) => {
     return (
         <>
             <UserDetailsCard
+                username={username}
                 user={user}
                 showUserRepos={showUserRepos}
                 showStarredRepos={showStarredRepos}
