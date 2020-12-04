@@ -8,52 +8,45 @@ const CustomAccordion = ({ repos }) => {
                 {repo.name}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey={repo.id}>
-                <Card.Body>
-                    <strong>description: </strong>
-                    {repo.description}
-                    <br />
-                    <strong>forks: </strong>
-                    {repo.forks}
-                    <br />
-                    <strong>homepage: </strong>
-                    {repo.homepage}
-                    <br />
-                    <strong>language: </strong>
-                    {repo.language}
-                    <br />
-                    <strong>htmlUrl: </strong>
-                    {repo.htmlUrl}
-                    <br />
-                    <strong>fullName: </strong>
-                    {repo.fullName}
-                    <br />
-                    <strong>htmlUrl: </strong>
-                    {repo.htmlUrl}
-                    <br />
-                    <strong>stargazersCount: </strong>
-                    {repo.stargazersCount}
-                    <br />
-                    <strong>watchersCount: </strong>
-                    {repo.watchersCount}
-                    <br />
-                    <strong>forksCount: </strong>
-                    {repo.forksCount}
-                    <br />
-                    <strong>openIssuesCount: </strong>
-                    {repo.openIssuesCount}
-                    <br />
-                    <strong>openIssues: </strong>
-                    {repo.openIssues}
-                    <br />
-                    <strong>createdAt: </strong>
-                    {repo.createdAt}
-                    <br />
-                    <strong>updatedAt: </strong>
-                    {repo.updatedAt}
-                    <br />
-                    <strong>pushedAt: </strong>
-                    {repo.pushedAt}
-                </Card.Body>
+                <article>
+                    <Card.Body>
+                        <strong>Description: </strong>
+                        {repo.description || '-'}
+                        <br />
+                        <strong>Forks: </strong>
+                        {repo.forks}
+                        <br />
+                        <strong>Homepage: </strong>
+                        {repo.homepage || '-'}
+                        <br />
+                        <strong>Language: </strong>
+                        {repo.language}
+                        <br />
+                        <strong>Html Url: </strong>
+                        {repo.htmlUrl}
+                        <br />
+                        <strong>Stargazers: </strong>
+                        {repo.stargazersCount}
+                        <br />
+                        <strong>Watchers: </strong>
+                        {repo.watchersCount}
+                        <br />
+                        <strong>Forks: </strong>
+                        {repo.forksCount}
+                        <br />
+                        <strong>Open Issues: </strong>
+                        {repo.openIssuesCount}
+                        <br />
+                        <strong>Created At: </strong>
+                        <time dateTime={repo.createdAt}>{repo.createdAt}</time>
+                        <br />
+                        <strong>Updated At: </strong>
+                        <time dateTime={repo.updatedAt}>{repo.updatedAt}</time>
+                        <br />
+                        <strong>Pushed At: </strong>
+                        <time dateTime={repo.pushedAt}>{repo.pushedAt}</time>
+                    </Card.Body>
+                </article>
             </Accordion.Collapse>
         </Card>
     ));

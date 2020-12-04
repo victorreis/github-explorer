@@ -53,31 +53,34 @@ const UserDetailsCard = ({
                 </Card.Subtitle>
                 <Card.Text>
                     <br />
-                    <strong>Bio:</strong> {bio || '-'}
+                    <strong>Bio: </strong>{' '}
+                    {(bio && <blockquote>{bio}</blockquote>) || '-'}
                     <br />
-                    <strong>Company:</strong> {company || '-'}
+                    <strong>Company: </strong> {company || '-'}
                     <br />
-                    <strong>Blog:</strong> {blog || '-'}
+                    <strong>Blog: </strong> {blog || '-'}
                     <br />
-                    <strong>Location:</strong> {location || '-'}
+                    <strong>Location: </strong> {location || '-'}
                     <br />
-                    <strong>E-mail:</strong> {email || '-'}
+                    <strong>E-mail: </strong> {email || '-'}
                     <br />
-                    <strong>Hireable:</strong> {hireable || '-'}
+                    <strong>Hireable: </strong> {hireable || '-'}
                     <br />
-                    <strong>Twitter Username:</strong> {twitterUsername || '-'}
+                    <strong>Twitter Username: </strong> {twitterUsername || '-'}
                     <br />
-                    <strong>Public Repos:</strong> {publicRepos}
+                    <strong>Public Repos: </strong> {publicRepos}
                     <br />
-                    <strong>Public Gists:</strong> {publicGists}
+                    <strong>Public Gists: </strong> {publicGists}
                     <br />
-                    <strong>Followers:</strong> {followers}
+                    <strong>Followers: </strong> {followers}
                     <br />
-                    <strong>Following:</strong> {following}
+                    <strong>Following: </strong> {following}
                     <br />
-                    <strong>Created At:</strong> {createdAt}
+                    <strong>Created At: </strong>
+                    <time dateTime={createdAt}>{createdAt}</time>
                     <br />
-                    <strong>Updated At:</strong> {updatedAt}
+                    <strong>Updated At: </strong>
+                    <time dateTime={updatedAt}>{updatedAt}</time>
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">

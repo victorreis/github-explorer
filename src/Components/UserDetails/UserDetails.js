@@ -54,15 +54,19 @@ const UserDetails = ({ username }) => {
 
     return (
         <>
-            <UserDetailsCard
-                username={username}
-                user={user}
-                showUserRepos={showUserRepos}
-                showStarredRepos={showStarredRepos}
-            />
+            <section>
+                <UserDetailsCard
+                    username={username}
+                    user={user}
+                    showUserRepos={showUserRepos}
+                    showStarredRepos={showStarredRepos}
+                />
+            </section>
             <br />
-            {accordionTitle}
-            <CustomAccordion repos={repos} />
+            <section>
+                {accordionTitle}
+                <CustomAccordion repos={repos} />
+            </section>
         </>
     );
 };

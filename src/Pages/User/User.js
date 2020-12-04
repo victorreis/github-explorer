@@ -15,7 +15,7 @@ const User = (props) => {
         <>{MALFORMED_USER_NAME(pathname)}</>
     );
 
-    return <>{user}</>;
+    return <section>{user}</section>;
 };
 
 export default User;
