@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { NO_REPOSITORY_TO_BE_SHOWED } from '../../Config/constants';
 import githubStarredReposService from '../../Services/GithubStarredReposService';
 import githubUserReposService from '../../Services/GithubUserReposService';
 import githubUserService from '../../Services/GithubUserService';
@@ -42,7 +43,6 @@ const UserDetails = ({ username }) => {
 
     const someButtonClicked = areUserRepos || areStarredRepos;
     const hasATitle = userReposAccordionTitle || starredReposAccordionTitle;
-    const noReposToShow = 'There are no repositories to be showed.';
 
     const accordionTitle =
         someButtonClicked &&
@@ -50,7 +50,7 @@ const UserDetails = ({ username }) => {
         ((repos.length > 0 && (
             <h5>{userReposAccordionTitle || starredReposAccordionTitle}</h5>
         )) ||
-            noReposToShow);
+            NO_REPOSITORY_TO_BE_SHOWED);
 
     return (
         <>

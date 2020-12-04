@@ -5,3 +5,6 @@ export const MALFORMED_USER_NAME = (username) =>
 
 export const NONEXISTENT_USER_NAME = (username) =>
     `The username (${username}) doesn't exists. Please, try another username.`;
+
+export const NO_REPOSITORY_TO_BE_SHOWED =
+    'There are no repositories to be showed.';
