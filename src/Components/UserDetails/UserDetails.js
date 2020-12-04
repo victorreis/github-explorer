@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import githubStarredReposService from '../../Services/GithubStarredReposService';
 import githubUserReposService from '../../Services/GithubUserReposService';
 import githubUserService from '../../Services/GithubUserService';
 import CustomAccordion from '../CustomAccordion';
@@ -27,16 +28,16 @@ const UserDetails = ({ username }) => {
     };
 
     const showStarredRepos = async () => {
-        setRepos([]);
+        setRepos(await githubStarredReposService.getByUsername(username));
         setAreUserRepos(false);
         setAreStarredRepos(true);
     };
 
     const userReposAccordionTitle = areUserRepos
-        ? `${username} repositories`
+        ? `'${username}' repositories`
         : null;
     const starredReposAccordionTitle = areStarredRepos
-        ? `Repositories starred by ${username}`
+        ? `Repositories starred by '${username}'`
         : null;
 
     const someButtonClicked = areUserRepos || areStarredRepos;

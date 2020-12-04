@@ -8,7 +8,7 @@ const getByUsername = async (username) => {
         .then((res) => res.data)
         .catch(requestErrorHandler);
 
-    return standardizeUserFields(userDetails);
+    return userDetails ? standardizeUserFields(userDetails) : {};
 };
 
 const standardizeUserFields = (user) => ({
