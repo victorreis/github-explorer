@@ -4,30 +4,32 @@ import { Card, Image, Button } from 'react-bootstrap';
 import './UserDetailsCard.css';
 import { NONEXISTENT_USER_NAME } from '../../Config/constants';
 
-const UserDetailsCard = ({
-    username,
-    user: {
-        login,
-        name,
-        avatarUrl,
-        htmlUrl,
-        company,
-        blog,
-        location,
-        email,
-        hireable,
-        bio,
-        twitterUsername,
-        publicRepos,
-        publicGists,
-        followers,
-        following,
-        createdAt,
-        updatedAt,
-    },
-    showUserRepos,
-    showStarredRepos,
-}) => {
+const UserDetailsCard = (props) => {
+    const {
+        username,
+        user: {
+            login,
+            name,
+            avatarUrl,
+            htmlUrl,
+            company,
+            blog,
+            location,
+            email,
+            hireable,
+            bio,
+            twitterUsername,
+            publicRepos,
+            publicGists,
+            followers,
+            following,
+            createdAt,
+            updatedAt,
+        },
+        onClickShowUserRepos,
+        onClickShowStarredRepos,
+    } = props;
+
     if (!login) {
         return <>{NONEXISTENT_USER_NAME(username)}</>;
     }
@@ -84,8 +86,8 @@ const UserDetailsCard = ({
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button onClick={showUserRepos}>REPOS</Button>
-                <Button onClick={showStarredRepos}>STARRED</Button>
+                <Button onClick={onClickShowUserRepos}>REPOS</Button>
+                <Button onClick={onClickShowStarredRepos}>STARRED</Button>
             </Card.Footer>
         </Card>
     );

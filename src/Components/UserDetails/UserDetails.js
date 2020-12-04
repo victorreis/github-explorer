@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 import { NO_REPOSITORY_TO_BE_SHOWED } from '../../Config/constants';
 import githubStarredReposService from '../../Services/GithubStarredReposService';
@@ -13,26 +13,55 @@ const UserDetails = ({ username }) => {
     const [areUserRepos, setAreUserRepos] = useState(false);
     const [areStarredRepos, setAreStarredRepos] = useState(false);
 
-    useEffect(() => {
-        (async () => {
-            setUser(await githubUserService.getByUsername(username));
-            setRepos([]);
-            setAreUserRepos(false);
-            setAreStarredRepos(false);
-        })();
+    const memoizedFunction = useCallback(async () => {
+        setUser(await githubUserService.getByUsername(username));
+        setRepos([]);
+        setAreUserRepos(false);
+        setAreStarredRepos(false);
     }, [username]);
 
-    const showUserRepos = async () => {
+    useEffect(() => {
+        memoizedFunction();
+    }, [memoizedFunction]);
+
+    const handleShowUserRepos = async () => {
         setRepos(await githubUserReposService.getByUsername(username));
         setAreUserRepos(true);
         setAreStarredRepos(false);
     };
 
-    const showStarredRepos = async () => {
+    const handleShowStarredRepos = async () => {
         setRepos(await githubStarredReposService.getByUsername(username));
         setAreUserRepos(false);
         setAreStarredRepos(true);
     };
+
+    return (
+        <>
+            <section>
+                <UserDetailsCard
+                    username={username}
+                    user={user}
+                    onClickShowUserRepos={handleShowUserRepos}
+                    onClickShowStarredRepos={handleShowStarredRepos}
+                />
+            </section>
+            <br />
+            <section>
+                <ConditionalReposTitle
+                    username={username}
+                    areUserRepos={areUserRepos}
+                    areStarredRepos={areStarredRepos}
+                    repos={repos}
+                />
+                <CustomAccordion repos={repos} />
+            </section>
+        </>
+    );
+};
+
+const ConditionalReposTitle = (props) => {
+    const { username, areUserRepos, areStarredRepos, repos } = props;
 
     const userReposAccordionTitle = areUserRepos
         ? `'${username}' repositories`
@@ -41,34 +70,13 @@ const UserDetails = ({ username }) => {
         ? `Repositories starred by '${username}'`
         : null;
 
-    const someButtonClicked = areUserRepos || areStarredRepos;
-    const hasATitle = userReposAccordionTitle || starredReposAccordionTitle;
-
-    const accordionTitle =
-        someButtonClicked &&
-        hasATitle &&
-        ((repos.length > 0 && (
-            <h5>{userReposAccordionTitle || starredReposAccordionTitle}</h5>
-        )) ||
-            NO_REPOSITORY_TO_BE_SHOWED);
-
-    return (
-        <>
-            <section>
-                <UserDetailsCard
-                    username={username}
-                    user={user}
-                    showUserRepos={showUserRepos}
-                    showStarredRepos={showStarredRepos}
-                />
-            </section>
-            <br />
-            <section>
-                {accordionTitle}
-                <CustomAccordion repos={repos} />
-            </section>
-        </>
-    );
+    if (repos.length > 0) {
+        return <h5>{userReposAccordionTitle || starredReposAccordionTitle}</h5>;
+    }
+    if (areUserRepos || areStarredRepos) {
+        return <>{NO_REPOSITORY_TO_BE_SHOWED}</>;
+    }
+    return null;
 };
 
 export default UserDetails;
