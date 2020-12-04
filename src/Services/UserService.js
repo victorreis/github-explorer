@@ -1,4 +1,4 @@
-import { validateGithubUsername } from '../../Utils/validators';
+import { validateGithubUsername } from '../Utils/validators';
 
 const getValidUsernameFromPathname = (pathname) => {
     const splittedPathname = pathname.split('/');

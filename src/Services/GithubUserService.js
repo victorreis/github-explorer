@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { requestErrorHandler } from '../ErrorHandler/ErrorHandler';
+import { requestErrorHandler } from './ErrorHandlerService';
 
 const getByName = async (name) => {
     const userDetails = await axios
