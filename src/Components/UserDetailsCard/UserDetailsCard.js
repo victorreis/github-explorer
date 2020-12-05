@@ -118,11 +118,17 @@ const UserDetailsCard = (props) => {
                     <time dateTime={updatedAt}>{updatedAt.toUTCString()}</time>
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="text-muted">
-                <Button onClick={onClickShowUserRepos} className="mr-2">
-                    REPOS
+            <Card.Footer className="text-muted" right>
+                <Button
+                    onClick={onClickShowStarredRepos}
+                    className="float-right">
+                    STARRED
                 </Button>
-                <Button onClick={onClickShowStarredRepos}>STARRED</Button>
+                <Button
+                    onClick={onClickShowUserRepos}
+                    className="mr-2 float-right">
+                    REPOSITORIES
+                </Button>
             </Card.Footer>
         </Card>
     );
