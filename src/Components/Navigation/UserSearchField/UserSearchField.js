@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
+import { BsSearch } from 'react-icons/bs';
 import { useHistory } from 'react-router-dom';
 
 import { validateGithubUsername } from '../../../Utils/validators';
@@ -33,10 +34,10 @@ const UserSearchField = () => {
                 onChange={handleUsernameChange}
             />
             <Button
-                variant="outline-success"
+                variant="primary"
                 onClick={handleSearch}
                 disabled={!username || !isValidUsername}>
-                Search
+                <BsSearch className="bold" />
             </Button>
         </Form>
     );

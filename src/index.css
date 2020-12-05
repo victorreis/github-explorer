@@ -1,4 +1,8 @@
 svg {
-    margin-bottom: 4px;
-    margin-left: 4px;
+    margin: 0 4px 4px 4px;
+}
+
+.btn {
+    letter-spacing: 1px;
+    font-weight: bold;
 }

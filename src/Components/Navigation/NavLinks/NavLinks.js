@@ -7,7 +7,10 @@ const NavLinks = () => {
     const navLinks = routes.map(
         (route) =>
             route.showInMenu && (
-                <NavLink className="nav-link" to={route.path} key={route.key}>
+                <NavLink
+                    className="nav-link text-light"
+                    to={route.path}
+                    key={route.key}>
                     {route.name}
                 </NavLink>
             )
