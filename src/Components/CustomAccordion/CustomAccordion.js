@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accordion, Card } from 'react-bootstrap';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 
 const CustomAccordion = ({ repos }) => {
     const reposCards = repos?.map((repo) => {
@@ -13,7 +14,6 @@ const CustomAccordion = ({ repos }) => {
             htmlUrl,
             stargazersCount,
             watchersCount,
-            forksCount,
             openIssuesCount,
         } = repo;
         const createdAt = new Date(repo.createdAt);
@@ -31,29 +31,62 @@ const CustomAccordion = ({ repos }) => {
                             <strong>Description: </strong>
                             {description || '-'}
                             <br />
+                            <strong>Html Url: </strong>
+                            <a href={htmlUrl} target="_blank" rel="noreferrer">
+                                {htmlUrl}
+                                <HiOutlineExternalLink />
+                            </a>
+                            <br />
                             <strong>Forks: </strong>
-                            {forks}
+                            <a
+                                href={`${htmlUrl}/network/members`}
+                                target="_blank"
+                                rel="noreferrer">
+                                {forks}
+                                <HiOutlineExternalLink />
+                            </a>
                             <br />
                             <strong>Homepage: </strong>
-                            {homepage || '-'}
+                            {(homepage && (
+                                <a
+                                    href={homepage}
+                                    target="_blank"
+                                    rel="noreferrer">
+                                    {homepage}
+                                    <HiOutlineExternalLink />
+                                </a>
+                            )) ||
+                                '-'}
                             <br />
                             <strong>Language: </strong>
                             {language}
                             <br />
-                            <strong>Html Url: </strong>
-                            {htmlUrl}
-                            <br />
                             <strong>Stargazers: </strong>
-                            {stargazersCount}
+                            <a
+                                href={`${htmlUrl}/stargazers`}
+                                target="_blank"
+                                rel="noreferrer">
+                                {stargazersCount}
+                                <HiOutlineExternalLink />
+                            </a>
                             <br />
                             <strong>Watchers: </strong>
-                            {watchersCount}
-                            <br />
-                            <strong>Forks: </strong>
-                            {forksCount}
+                            <a
+                                href={`${htmlUrl}/watchers`}
+                                target="_blank"
+                                rel="noreferrer">
+                                {watchersCount}
+                                <HiOutlineExternalLink />
+                            </a>
                             <br />
                             <strong>Open Issues: </strong>
-                            {openIssuesCount}
+                            <a
+                                href={`${htmlUrl}/issues`}
+                                target="_blank"
+                                rel="noreferrer">
+                                {openIssuesCount}
+                                <HiOutlineExternalLink />
+                            </a>
                             <br />
                             <strong>Created At: </strong>
                             <time dateTime={createdAt}>

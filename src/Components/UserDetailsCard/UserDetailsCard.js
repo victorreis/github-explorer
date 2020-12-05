@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Image, Button } from 'react-bootstrap';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 
 import './UserDetailsCard.css';
 import { NONEXISTENT_USER_NAME } from '../../Config/constants';
@@ -20,7 +21,6 @@ const UserDetailsCard = (props) => {
             bio,
             twitterUsername,
             publicRepos,
-            publicGists,
             followers,
             following,
         },
@@ -51,6 +51,7 @@ const UserDetailsCard = (props) => {
                 <Card.Subtitle>
                     <a href={htmlUrl} target="_blank" rel="noreferrer">
                         {htmlUrl}
+                        <HiOutlineExternalLink />
                     </a>
                 </Card.Subtitle>
                 <Card.Text>
@@ -58,25 +59,57 @@ const UserDetailsCard = (props) => {
                     <strong>Bio: </strong>{' '}
                     {(bio && <blockquote>{bio}</blockquote>) || '-'}
                     <br />
-                    <strong>Company: </strong> {company || '-'}
+                    <strong>Company: </strong>
+                    {company || '-'}
                     <br />
-                    <strong>Blog: </strong> {blog || '-'}
+                    <strong>Blog: </strong>
+                    {(
+                        <>
+                            <a href={blog} target="_blank" rel="noreferrer">
+                                {blog}
+                                <HiOutlineExternalLink />
+                            </a>
+                        </>
+                    ) || '-'}
                     <br />
-                    <strong>Location: </strong> {location || '-'}
+                    <strong>Location: </strong>
+                    {location || '-'}
                     <br />
-                    <strong>E-mail: </strong> {email || '-'}
+                    <strong>E-mail: </strong>
+                    {email || '-'}
                     <br />
-                    <strong>Hireable: </strong> {hireable || '-'}
+                    <strong>Hireable: </strong>
+                    {hireable || '-'}
                     <br />
-                    <strong>Twitter Username: </strong> {twitterUsername || '-'}
+                    <strong>Twitter Username: </strong>
+                    {twitterUsername || '-'}
                     <br />
-                    <strong>Public Repos: </strong> {publicRepos}
+                    <strong>Public Repos: </strong>
+                    <a
+                        href={`https://github.com/${login}?tab=repositories`}
+                        target="_blank"
+                        rel="noreferrer">
+                        {publicRepos}
+                        <HiOutlineExternalLink />
+                    </a>
                     <br />
-                    <strong>Public Gists: </strong> {publicGists}
+                    <strong>Followers: </strong>
+                    <a
+                        href={`https://github.com/${login}?tab=followers`}
+                        target="_blank"
+                        rel="noreferrer">
+                        {followers}
+                        <HiOutlineExternalLink />
+                    </a>
                     <br />
-                    <strong>Followers: </strong> {followers}
-                    <br />
-                    <strong>Following: </strong> {following}
+                    <strong>Following: </strong>
+                    <a
+                        href={`https://github.com/${login}?tab=following`}
+                        target="_blank"
+                        rel="noreferrer">
+                        {following}
+                        <HiOutlineExternalLink />
+                    </a>
                     <br />
                     <strong>Created At: </strong>
                     <time dateTime={createdAt}>{createdAt.toUTCString()}</time>
@@ -86,9 +119,7 @@ const UserDetailsCard = (props) => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button onClick={onClickShowUserRepos} className="mr-2">
-                    REPOS
-                </Button>
+                <Button onClick={onClickShowUserRepos}>REPOS</Button>
                 <Button onClick={onClickShowStarredRepos}>STARRED</Button>
             </Card.Footer>
         </Card>
