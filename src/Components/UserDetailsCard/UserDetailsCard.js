@@ -119,7 +119,9 @@ const UserDetailsCard = (props) => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button onClick={onClickShowUserRepos}>REPOS</Button>
+                <Button onClick={onClickShowUserRepos} className="mr-2">
+                    REPOS
+                </Button>
                 <Button onClick={onClickShowStarredRepos}>STARRED</Button>
             </Card.Footer>
         </Card>
