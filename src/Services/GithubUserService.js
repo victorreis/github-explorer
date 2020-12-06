@@ -1,14 +1,20 @@
 import axios from 'axios';
 
+import { NONEXISTENT_USER_NAME } from '../Config/constants';
 import { requestErrorHandler } from './ErrorHandlerService';
 
 const getByUsername = async (username) => {
-    const userDetails = await axios
-        .get(`https://api.github.com/users/${username}`)
-        .then((res) => res.data)
-        .catch(requestErrorHandler);
+    try {
+        const userDetails = await axios
+            .get(`https://api.github.com/users/${username}`)
+            .then((res) => res.data)
+            .catch(requestErrorHandler);
 
-    return userDetails ? standardizeUserFields(userDetails) : {};
+        return standardizeUserFields(userDetails);
+    } catch (error) {
+        console.error(NONEXISTENT_USER_NAME(username));
+    }
+    return {};
 };
 
 const standardizeUserFields = (user) => {

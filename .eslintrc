@@ -85,6 +85,7 @@
                 "tabWidth": 4
             }
         ],
+        "no-console": "off",
         "no-param-reassign": "off",
         "no-unused-vars": "error",
         "no-useless-computed-key": "error",
