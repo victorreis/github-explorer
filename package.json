@@ -1,7 +1,42 @@
 {
     "name": "github-explorer-react",
     "version": "0.1.0",
-    "private": true,
+    "description": "A simple and intuitive interface to search and view information about users, their public repositories and repositories they starred.",
+    "author": "Victor Reis <v.crisostomo.reis@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://github-explorer-react.vercel.app/",
+    "private": false,
+    "keywords": [
+        "github",
+        "js",
+        "react",
+        "react-router",
+        "react-bootstrap",
+        "mocha",
+        "chai",
+        "SEO",
+        "Web Semantic",
+        "Usability",
+        "Clean Code",
+        "SOLID",
+        "KISS",
+        "YAGNI",
+        "DRY"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/victorreis/github-explorer-react"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+        "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require @babel/register --watch",
+        "test:coverage": "nyc npm test",
+        "eject": "react-scripts eject",
+        "fix:js": "npx eslint --fix ./src/",
+        "lint:js": "npx eslint ./src/"
+    },
     "dependencies": {
         "axios": "^0.21.0",
         "bootstrap": "^4.5.3",
@@ -15,15 +50,34 @@
         "regenerator-runtime": "^0.13.7",
         "web-vitals": "^1.0.1"
     },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
-        "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require @babel/register --watch",
-        "test:coverage": "nyc npm test",
-        "eject": "react-scripts eject",
-        "fix:js": "npx eslint --fix ./src/",
-        "lint:js": "npx eslint ./src/"
+    "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/register": "^7.12.1",
+        "@testing-library/jest-dom": "^5.11.6",
+        "@testing-library/react": "^11.2.2",
+        "@testing-library/user-event": "^12.3.0",
+        "chai": "^4.2.0",
+        "eslint": "^7.14.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-config-react-app": "^6.0.0",
+        "eslint-plugin-fp": "^2.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-import-helpers": "1.1.0",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^3.1.4",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-app": "^6.2.2",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.5.2",
+        "mocha": "^8.2.1",
+        "moxios": "^0.4.0",
+        "nyc": "^15.1.0",
+        "prettier": "^2.2.1",
+        "sinon": "^9.2.1",
+        "sinon-chai": "^3.5.0",
+        "sinon-stub-promise": "^4.0.0"
     },
     "nyc": {
         "reporter": [
@@ -50,31 +104,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "@babel/core": "^7.12.9",
-        "@babel/register": "^7.12.1",
-        "@testing-library/jest-dom": "^5.11.6",
-        "@testing-library/react": "^11.2.2",
-        "@testing-library/user-event": "^12.3.0",
-        "chai": "^4.2.0",
-        "eslint": "^7.14.0",
-        "eslint-config-airbnb": "^18.2.1",
-        "eslint-config-prettier": "^6.15.0",
-        "eslint-config-react-app": "^6.0.0",
-        "eslint-plugin-fp": "^2.3.0",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-import-helpers": "1.1.0",
-        "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-prettier": "^3.1.4",
-        "eslint-plugin-react": "^7.21.5",
-        "eslint-plugin-react-app": "^6.2.2",
-        "eslint-plugin-react-hooks": "^4.2.0",
-        "husky": "^4.3.0",
-        "lint-staged": "^10.5.2",
-        "mocha": "^8.2.1",
-        "nyc": "^15.1.0",
-        "prettier": "^2.2.1"
     },
     "husky": {
         "hooks": {
