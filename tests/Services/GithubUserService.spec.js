@@ -12,7 +12,7 @@ sinonStubPromise(sinon);
 
 describe('Services/GithubUserService', () => {
     let userWithUnderlineKeys;
-    let formatedUser;
+    let formattedUser;
     const usernameNonExistant = 'username123teste';
 
     before(() => {
@@ -35,7 +35,7 @@ describe('Services/GithubUserService', () => {
             created_at: 'Sun, 05 Feb 2012 14:53:26 GMT',
             updated_at: 'Sat, 05 Dec 2020 06:07:07 GMT',
         };
-        formatedUser = {
+        formattedUser = {
             login: 'login',
             name: 'name',
             company: 'company',
@@ -77,7 +77,7 @@ describe('Services/GithubUserService', () => {
 
             getByUsernameStub
                 .withArgs(userWithUnderlineKeys.name)
-                .returns(formatedUser);
+                .returns(formattedUser);
             getByUsernameStub.withArgs(usernameNonExistant).returns({});
         });
 
@@ -104,12 +104,12 @@ describe('Services/GithubUserService', () => {
                 expect(axios.get).to.have.callCount(1);
                 expect(response).to.be.eql(userWithUnderlineKeys);
 
-                expect(standardizeUser).to.be.eql(formatedUser);
+                expect(standardizeUser).to.be.eql(formattedUser);
                 expect(
                     githubUserService.standardizeUserFields
                 ).to.have.callCount(1);
 
-                expect(userDetails).to.be.eql(formatedUser);
+                expect(userDetails).to.be.eql(formattedUser);
             });
         });
 
@@ -142,7 +142,7 @@ describe('Services/GithubUserService', () => {
                 const standardizedUser = githubUserService.standardizeUserFields(
                     userWithUnderlineKeys
                 );
-                expect(standardizedUser).to.be.eql(formatedUser);
+                expect(standardizedUser).to.be.eql(formattedUser);
             });
         });
     });
