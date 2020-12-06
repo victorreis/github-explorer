@@ -1,115 +1,115 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "mocha": true
-  },
-  "extends": ["plugin:react/recommended", "airbnb", "airbnb/hooks", "react-app", "plugin:import/recommended", "plugin:jsx-a11y/recommended", "prettier", "prettier/react"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "mocha": true
     },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["prettier", "fp", "react", "react-hooks", "import-helpers", "jsx-a11y"],
-  "rules": {
-    "arrow-parens": "error",
-    "class-methods-use-this": "off",
-    "fp/no-delete": "warn",
-    "fp/no-mutating-assign": "warn",
-    "fp/no-mutating-methods": [
-      "warn",
-      {
-        "allowedObjects": ["_", "R", "history"]
-      }
-    ],
-    "fp/no-mutation": [
-      "warn",
-      {
-        "allowThis": true,
-        "commonjs": true,
-        "exceptions": [
-          {
-            "property": "propTypes"
-          },
-          {
-            "property": "defaultProps"
-          },
-          {
-            "property": "current"
-          }
-        ]
-      }
-    ],
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "alphabetize": {
-          "ignoreCase": true,
-          "order": "asc"
+    "extends": ["plugin:react/recommended", "airbnb", "airbnb/hooks", "react-app", "plugin:import/recommended", "plugin:jsx-a11y/recommended", "prettier", "prettier/react"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
         },
-        "groups": [
-          "/^react/",
-          "module",
-          "/^@src/Pages/",
-          "/^@src/Routes/",
-          "/^@src/Services/",
-          "/^@src/Store/",
-          "/^@src/Utils/",
-          "/^@src/Assets/",
-          "/^@src/Theme/",
-          "/^@src/Components/",
-          "/^@src/Types/",
-          "/^@src/Constants/",
-          "/^@src/Exceptions/",
-          ["parent", "sibling", "index"]
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["prettier", "fp", "react", "react-hooks", "import-helpers", "jsx-a11y"],
+    "rules": {
+        "arrow-parens": "error",
+        "class-methods-use-this": "off",
+        "fp/no-delete": "warn",
+        "fp/no-mutating-assign": "warn",
+        "fp/no-mutating-methods": [
+            "warn",
+            {
+                "allowedObjects": ["_", "R", "history"]
+            }
         ],
-        "newlinesBetween": "always"
-      }
-    ],
-    "import/extensions": 0,
-    "import/no-cycle": "off",
-    "import/prefer-default-export": 0,
-    "jsx-a11y/anchor-is-valid": [
-      "warn",
-      {
-        "aspects": ["invalidHref"]
-      }
-    ],
-    "max-len": [
-      "warn",
-      {
-        "code": 200,
-        "ignoreComments": true,
-        "tabWidth": 4
-      }
-    ],
-    "no-param-reassign": "off",
-    "no-unused-vars": "error",
-    "no-useless-computed-key": "error",
-    "object-curly-spacing": "off",
-    "prettier/prettier": ["warn"],
-    "react-hooks/rules-of-hooks": "error",
-    "react/destructuring-assignment": "off",
-    "react/display-name": 0,
-    "react/js-filename-extension": [
-      0,
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
-    "react/jsx-one-expression-per-line": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/no-direct-mutation-state": "error",
-    "react/prop-types": "off"
-  }
+        "fp/no-mutation": [
+            "warn",
+            {
+                "allowThis": true,
+                "commonjs": true,
+                "exceptions": [
+                    {
+                        "property": "propTypes"
+                    },
+                    {
+                        "property": "defaultProps"
+                    },
+                    {
+                        "property": "current"
+                    }
+                ]
+            }
+        ],
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "alphabetize": {
+                    "ignoreCase": true,
+                    "order": "asc"
+                },
+                "groups": [
+                    "/^react/",
+                    "module",
+                    "/^@src/Pages/",
+                    "/^@src/Routes/",
+                    "/^@src/Services/",
+                    "/^@src/Store/",
+                    "/^@src/Utils/",
+                    "/^@src/Assets/",
+                    "/^@src/Theme/",
+                    "/^@src/Components/",
+                    "/^@src/Types/",
+                    "/^@src/Constants/",
+                    "/^@src/Exceptions/",
+                    ["parent", "sibling", "index"]
+                ],
+                "newlinesBetween": "always"
+            }
+        ],
+        "import/extensions": 0,
+        "import/no-cycle": "off",
+        "import/prefer-default-export": 0,
+        "jsx-a11y/anchor-is-valid": [
+            "warn",
+            {
+                "aspects": ["invalidHref"]
+            }
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 200,
+                "ignoreComments": true,
+                "tabWidth": 4
+            }
+        ],
+        "no-param-reassign": "off",
+        "no-unused-vars": "error",
+        "no-useless-computed-key": "error",
+        "object-curly-spacing": "off",
+        "prettier/prettier": ["warn"],
+        "react-hooks/rules-of-hooks": "error",
+        "react/destructuring-assignment": "off",
+        "react/display-name": 0,
+        "react/js-filename-extension": [
+            0,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-props-no-spreading": 0,
+        "react/no-direct-mutation-state": "error",
+        "react/prop-types": "off"
+    }
 }

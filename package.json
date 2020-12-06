@@ -5,22 +5,34 @@
     "dependencies": {
         "axios": "^0.21.0",
         "bootstrap": "^4.5.3",
+        "core-js": "^3.8.0",
         "react": "^17.0.1",
         "react-bootstrap": "^1.4.0",
         "react-dom": "^17.0.1",
         "react-icons": "^4.1.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.1",
+        "regenerator-runtime": "^0.13.7",
         "web-vitals": "^1.0.1"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-        "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require babel-register --watch",
+        "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+        "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js  --require @babel/register --watch",
+        "test:coverage": "nyc npm test",
         "eject": "react-scripts eject",
         "fix:js": "npx eslint --fix ./src/",
         "lint:js": "npx eslint ./src/"
+    },
+    "nyc": {
+        "reporter": [
+            "text",
+            "html"
+        ],
+        "exclude": [
+            "tests/**"
+        ]
     },
     "eslintConfig": {
         "extends": [
@@ -40,11 +52,11 @@
         ]
     },
     "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/register": "^7.12.1",
         "@testing-library/jest-dom": "^5.11.6",
         "@testing-library/react": "^11.2.2",
         "@testing-library/user-event": "^12.3.0",
-        "babel-preset-env": "^1.7.0",
-        "babel-register": "^6.26.0",
         "chai": "^4.2.0",
         "eslint": "^7.14.0",
         "eslint-config-airbnb": "^18.2.1",
@@ -61,6 +73,7 @@
         "husky": "^4.3.0",
         "lint-staged": "^10.5.2",
         "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
         "prettier": "^2.2.1"
     },
     "husky": {
