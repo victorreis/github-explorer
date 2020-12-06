@@ -5,6 +5,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 
+import { GITHUB_API_URL } from '../../src/Config/constants';
 import githubUserService from '../../src/Services/GithubUserService';
 
 chai.use(sinonChai);
@@ -71,7 +72,7 @@ describe('Services/GithubUserService', () => {
 
             axiosGetUserStub
                 .withArgs(
-                    `https://api.github.com/users/${userWithUnderlineKeys.name}`
+                    `${GITHUB_API_URL}/users/${userWithUnderlineKeys.name}`
                 )
                 .resolves(userWithUnderlineKeys);
 
@@ -90,7 +91,7 @@ describe('Services/GithubUserService', () => {
         context('Successful request - status 200', () => {
             it('Should return the user informations when username exists', async () => {
                 const response = await axios.get(
-                    `https://api.github.com/users/${userWithUnderlineKeys.name}`
+                    `${GITHUB_API_URL}/users/${userWithUnderlineKeys.name}`
                 );
 
                 const standardizeUser = githubUserService.standardizeUserFields(

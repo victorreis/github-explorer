@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-import { NONEXISTENT_USER_NAME } from '../Config/constants';
+import { GITHUB_API_URL, NONEXISTENT_USER_NAME } from '../Config/constants';
 import { requestErrorHandler } from './ErrorHandlerService';
 
 const getByUsername = async (username) => {
     try {
         const userDetails = await axios
-            .get(`https://api.github.com/users/${username}`)
+            .get(`${GITHUB_API_URL}/users/${username}`)
             .then((res) => res.data)
             .catch(requestErrorHandler);
 

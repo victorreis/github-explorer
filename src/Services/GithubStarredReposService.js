@@ -1,11 +1,12 @@
 import axios from 'axios';
 
+import { GITHUB_API_URL } from '../Config/constants';
 import { requestErrorHandler } from './ErrorHandlerService';
 import reposService from './ReposService';
 
 const getByUsername = async (username) => {
     const repos = await axios
-        .get(`https://api.github.com/users/${username}/starred`)
+        .get(`${GITHUB_API_URL}/users/${username}/starred`)
         .then((res) => res.data)
         .catch(requestErrorHandler);
 
