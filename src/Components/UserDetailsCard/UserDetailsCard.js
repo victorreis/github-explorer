@@ -118,7 +118,7 @@ const UserDetailsCard = (props) => {
                     <time dateTime={updatedAt}>{updatedAt.toUTCString()}</time>
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="text-muted" right>
+            <Card.Footer className="text-muted">
                 <Button
                     onClick={onClickShowStarredRepos}
                     className="float-right">

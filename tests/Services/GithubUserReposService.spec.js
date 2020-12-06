@@ -20,8 +20,10 @@ describe('Services/GithubUserReposService', () => {
     before(() => {
         reposWithUnderlineKeys = [
             {
-                full_name: 'repository name 1',
+                id: 123,
+                name: 'repository name 1',
                 owner: {
+                    id: 111,
                     login: 'login',
                     name: 'name',
                     company: 'company',
@@ -53,8 +55,10 @@ describe('Services/GithubUserReposService', () => {
                 pushed_at: 'Sun, 05 Feb 2012 14:53:26 GMT',
             },
             {
-                full_name: 'repository name 2',
+                id: 456,
+                name: 'repository name 2',
                 owner: {
+                    id: 111,
                     login: 'login',
                     name: 'name',
                     company: 'company',
@@ -88,8 +92,10 @@ describe('Services/GithubUserReposService', () => {
         ];
         formattedRepos = [
             {
-                fullName: 'repository name 1',
+                id: 123,
+                name: 'repository name 1',
                 owner: {
+                    id: 111,
                     login: 'login',
                     name: 'name',
                     company: 'company',
@@ -121,8 +127,10 @@ describe('Services/GithubUserReposService', () => {
                 pushedAt: 'Sun, 05 Feb 2012 14:53:26 GMT',
             },
             {
-                fullName: 'repository name 2',
+                id: 456,
+                name: 'repository name 2',
                 owner: {
+                    id: 111,
                     login: 'login',
                     name: 'name',
                     company: 'company',

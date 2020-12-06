@@ -6,7 +6,8 @@ const standardizeReposFields = (repos) => {
     }
 
     return repos.map((repo) => ({
-        fullName: repo.full_name,
+        id: repo.id,
+        name: repo.name,
         owner: githubUserService.standardizeUserFields(repo.owner),
         description: repo.description,
         htmlUrl: repo.html_url,

@@ -22,6 +22,7 @@ const standardizeUserFields = (user) => {
         return {};
     }
     return {
+        id: user?.id,
         login: user?.login,
         name: user?.name,
         company: user?.company,

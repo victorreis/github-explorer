@@ -18,6 +18,7 @@ describe('Services/GithubUserService', () => {
 
     before(() => {
         userWithUnderlineKeys = {
+            id: 111,
             login: 'login',
             name: 'name',
             company: 'company',
@@ -37,6 +38,7 @@ describe('Services/GithubUserService', () => {
             updated_at: 'Sat, 05 Dec 2020 06:07:07 GMT',
         };
         formattedUser = {
+            id: 111,
             login: 'login',
             name: 'name',
             company: 'company',
