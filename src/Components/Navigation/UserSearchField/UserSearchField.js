@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { FormControl, Button } from 'react-bootstrap';
 import { BsSearch } from 'react-icons/bs';
 import { useHistory } from 'react-router-dom';
 
 import { validateGithubUsername } from '../../../Utils/validators';
+import './UserSearchField.css';
 
 const UserSearchField = () => {
     const history = useHistory();
@@ -23,15 +24,21 @@ const UserSearchField = () => {
     const handleSearch = () => {
         history.push(username);
     };
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
 
     return (
-        <Form inline>
+        <div className="user-search-field-container">
             <FormControl
                 type="text"
                 placeholder="Search"
                 className={classes.join(' ')}
                 value={username}
                 onChange={handleUsernameChange}
+                onKeyPress={handleKeyPress}
             />
             <Button
                 variant="primary"
@@ -39,7 +46,7 @@ const UserSearchField = () => {
                 disabled={!username || !isValidUsername}>
                 <BsSearch className="bold" />
             </Button>
-        </Form>
+        </div>
     );
 };
 
