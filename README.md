@@ -1,6 +1,6 @@
 # Welcome to Github Explorer
 
-See the latest version online: [https://github-explorer-react.vercel.app/](https://github-explorer-react.vercel.app/)
+Access: [https://github-explorer-react.vercel.app/](https://github-explorer-react.vercel.app/)
 
 A simple and intuitive interface to search and view information
 about users, their public repositories and repositories they
